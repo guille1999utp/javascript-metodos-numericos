@@ -4,7 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { calcNewtonRaphson } from '../utils/opeMatematicas';
+import { calcLagrange } from '../utils/opeMatematicas';
 
 
 function TabPanel(props) {
@@ -45,8 +45,8 @@ export const PolinomioLagrange = () => {
   const [mostrar, setMostrar] = React.useState(false);
   const [result, setResult] = React.useState(0);
   const [Form, setForm] = React.useState({
-    funcion: "",
-    Inicial: "",
+    firstPol: "",
+    secondPol: "",
   });
 
   const onChange = (e) => {
@@ -59,10 +59,11 @@ export const PolinomioLagrange = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const result =  calcNewtonRaphson(parseInt(Form.Inicial),Form.funcion);
+    const result =  calcLagrange(Form.firstPol,Form.secondPol);
     setResult(result);
     setMostrar(true);
   };
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -70,26 +71,18 @@ export const PolinomioLagrange = () => {
   return (
     <Box className="login" style={{maxWidth:"800px"}}>
         <h1 style={{marginBottom:"20px"}}>Polinomio de Lagrange</h1>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Primer Orden" {...a11yProps(0)} />
-          <Tab label="Segundo Orden" {...a11yProps(1)} />
-          <Tab label="Tercer Orden" {...a11yProps(2)} />
-        </Tabs>
-      </Box>
-      <TabPanel value={value} index={0}>
       <div className="contenedor"></div>
       <form className="form-register" onSubmit={onSubmit} style={{maxWidth:"600px",margin:"auto"}}>
         <input
-          name="funcion"
-          value={Form.funcion}
+          name="firstPol"
+          value={Form.firstPol}
           onChange={onChange}
           type="text"
           placeholder="coeficientes del primer polinomio"
         />
         <input
-          name="Inicial"
-          value={Form.Inicial}
+          name="secondPol"
+          value={Form.secondPol}
           onChange={onChange}
           type="text"
           placeholder="coeficientes del segundo polinomio"
@@ -113,81 +106,6 @@ export const PolinomioLagrange = () => {
           </div>
         </div>
       )}
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-      <div className="contenedor"></div>
-      <form className="form-register" onSubmit={onSubmit} style={{maxWidth:"600px",margin:"auto"}}>
-        <input
-          name="funcion"
-          value={Form.funcion}
-          onChange={onChange}
-          type="text"
-          placeholder="coeficientes del primer polinomio"
-        />
-        <input
-          name="Inicial"
-          value={Form.Inicial}
-          onChange={onChange}
-          type="text"
-          placeholder="coeficientes del segundo polinomio"
-        />
-        <button type="submit">Calcular</button>
-      </form>
-
-      {mostrar && (
-        <div
-          style={{
-            flexDirection: "column",
-            marginTop: 20,
-          }}
-        >
-          <div
-            style={{
-              flexDirection: "row",
-            }}
-          >  
-            <p>Resultado: {result}</p>
-          </div>
-        </div>
-      )}
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-      <div className="contenedor"></div>
-      <form className="form-register" onSubmit={onSubmit} style={{maxWidth:"600px",margin:"auto"}}>
-        <input
-          name="funcion"
-          value={Form.funcion}
-          onChange={onChange}
-          type="text"
-          placeholder="coeficientes del primer polinomio"
-        />
-        <input
-          name="Inicial"
-          value={Form.Inicial}
-          onChange={onChange}
-          type="text"
-          placeholder="coeficientes del segundo polinomio"
-        />
-        <button type="submit">Calcular</button>
-      </form>
-
-      {mostrar && (
-        <div
-          style={{
-            flexDirection: "column",
-            marginTop: 20,
-          }}
-        >
-          <div
-            style={{
-              flexDirection: "row",
-            }}
-          >  
-            <p>Resultado: {result}</p>
-          </div>
-        </div>
-      )}
-      </TabPanel>
     </Box>
   );
 }

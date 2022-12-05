@@ -1,4 +1,5 @@
 import nerdamer from "nerdamer/all.min";
+
 export function abs(x){
     if(x<0){return -x;}
     return x
@@ -75,10 +76,8 @@ export function calcNewtonRaphson(a,func){
             x=Xf;
             Xy=eval(Y);
             Xyp=eval(Yp);
-            console.log(Xy);
             console.log(Xyp);
             Xf=Xf-(Xy/Xyp);
-            console.log(Xf);
             ErrorA = Error;
             Error = abs(XAnterior-Xf);
             if (abs(XAnterior-Xf)<0.00001){
@@ -152,4 +151,29 @@ export function calcDiferenciacion(a,b,func){
         M2,
         M3
     }
+}
+
+export function calcLagrange(first,second){
+    let firstPol = first.split(',');
+    let secondPol = second.split(",");
+    let polinomio = "";
+    for (let i = 0; i < firstPol.length; i++) {
+       let numerador = '';
+       let denominador = 1;
+        for (let j = 0; j < firstPol.length; j++) {
+         if(j != i){
+            numerador = numerador + `(x - ${firstPol[j]})`;
+            denominador *= (firstPol[i] - firstPol[j]); 
+         }
+        }
+        if(denominador !== 0){
+            let terminoL = `${numerador}/${denominador}`;
+            polinomio += `${secondPol[i]}*${terminoL} + `;
+        }
+    }
+    const polCompleto =  polinomio.slice(0,-3)
+    polinomio = nerdamer(`${polCompleto}`).text(); 
+    return polinomio;
+
+
 }
