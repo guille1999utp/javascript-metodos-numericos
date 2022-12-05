@@ -1,0 +1,38 @@
+.beneficios{
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 100vh;    
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(5,7,12,.9),rgba(5,7,12,.9));
+    z-index: 30;
+    .beneficiosPantalla{
+        max-height: 90vh;
+        margin: auto;
+        max-width: 1000px;
+        z-index: 20;
+    }
+
+    .iconClose{
+        position: fixed;
+        top: 5%;
+        right: 5%;
+        cursor: pointer;
+        z-index: 100;
+    }
+}
+
+
+@media screen and (max-width:500px){
+    .beneficios{
+ .beneficiosPantalla{
+            max-height: 90vh;
+            margin: auto;
+            max-width: 90vw;
+            z-index: 20;
+        }
+    }
+}

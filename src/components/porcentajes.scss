@@ -1,0 +1,47 @@
+.grid-comisiones{
+    h2{
+        font-size: 46px;
+        color: black;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        .label{
+            font-size: 15px;
+        }
+        label{
+            font-size: 29px;
+            color: black;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        input{
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: solid 1px black;
+        }
+        button{
+            font-size: 25px;
+            color: black;
+            width: 75%;
+            background-color: black;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border-radius: 10px;
+            margin: 40px auto;
+        }
+    }
+}
+
+
+@media screen and (max-width:500px){
+    .grid-comisiones{
+        h2{
+            font-size: 34px;
+        }
+    }
+}

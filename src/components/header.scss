@@ -1,0 +1,78 @@
+.menu-first{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    padding: 20px;
+    align-items: center;
+    border-bottom: 1px solid gray;
+
+    .whatsappButton{
+        position: fixed;
+        background-color: black;
+        border-radius: 50%;
+        padding: 10px;
+        bottom: 100px;
+        right: 100px;
+        cursor: pointer;
+        border: 1px solid white;
+        align-items: center;
+        display: flex;
+    }
+    .redes{
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        bottom: 0;
+        background: black;
+        height: 47px;
+        width: 100%;
+        left: 0;
+        align-items: center;
+        z-index: -1;
+        li{
+            margin: 0 20px;
+            a{
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .actiones{
+        .actions{
+        color: white;
+        text-decoration: none;
+        margin-right: 15px;
+    }}
+    .logo{
+        height: 58px;
+    }
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft{
+top: 68px;
+height: calc(100% - 115px);
+background: black !important;
+}     
+.MuiDrawer-root.MuiDrawer-modal.MuiModal-root{
+    .MuiBackdrop-root{
+    background-color: rgba(0, 0, 0, 0);
+    }
+}
+@media screen and (max-width:500px){
+    .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft{
+        top: 79px;
+        height: calc(100% - 126px);
+        }
+    .menu-first{
+        .logo{
+            height: 35px;
+        }
+        .whatsappButton{
+            bottom: 70px;
+            right: 30px;
+        }
+    }
+}
