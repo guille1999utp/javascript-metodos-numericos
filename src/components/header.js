@@ -67,7 +67,7 @@ const Header = () => {
           sx={{ ":hover": { opacity: "0.58" } }}
         >
           <ListItemButton>
-            <ListItemText primary={"error"} sx={{ color: "white" }} />
+            <ListItemText primary={"Error"} sx={{ color: "white" }} />
           </ListItemButton>
         </ListItem>
         <ListItem
@@ -77,7 +77,7 @@ const Header = () => {
           sx={{ ":hover": { opacity: "0.58" } }}
         >
           <ListItemButton>
-            <ListItemText primary={"lagrange"} sx={{ color: "white" }} />
+            <ListItemText primary={"Lagrange"} sx={{ color: "white" }} />
           </ListItemButton>
         </ListItem>
         <ListItem
@@ -87,7 +87,7 @@ const Header = () => {
           sx={{ ":hover": { opacity: "0.58" } }}
         >
           <ListItemButton>
-            <ListItemText primary={"netwon"} sx={{ color: "white" }} />
+            <ListItemText primary={"Netwon"} sx={{ color: "white" }} />
           </ListItemButton>
         </ListItem>
         <ListItem
@@ -97,7 +97,7 @@ const Header = () => {
           sx={{ ":hover": { opacity: "0.58" } }}
         >
           <ListItemButton>
-            <ListItemText primary={"punto fijo"} sx={{ color: "white" }} />
+            <ListItemText primary={"Punto Fijo"} sx={{ color: "white" }} />
           </ListItemButton>
         </ListItem>
         <ListItem
@@ -107,7 +107,7 @@ const Header = () => {
           sx={{ ":hover": { opacity: "0.58" } }}
         >
           <ListItemButton>
-            <ListItemText primary={"integracion"} sx={{ color: "white" }} />
+            <ListItemText primary={"Integracion"} sx={{ color: "white" }} />
           </ListItemButton>
         </ListItem>
         <ListItem
@@ -117,7 +117,7 @@ const Header = () => {
           sx={{ ":hover": { opacity: "0.58" } }}
         >
           <ListItemButton>
-            <ListItemText primary={"diferenciacion"} sx={{ color: "white" }} />
+            <ListItemText primary={"Diferenciacion"} sx={{ color: "white" }} />
           </ListItemButton>
         </ListItem>
         <ListItem
@@ -128,6 +128,16 @@ const Header = () => {
         >
           <ListItemButton>
             <ListItemText primary={"Biseccion"} sx={{ color: "white" }} />
+          </ListItemButton>
+        </ListItem>
+        <ListItem
+          key={"Gauss Seidel"}
+          disablePadding
+          onClick={() => redirect("/gauss")}
+          sx={{ ":hover": { opacity: "0.58" } }}
+        >
+          <ListItemButton>
+            <ListItemText primary={"Gauss Seidel"} sx={{ color: "white" }} />
           </ListItemButton>
         </ListItem>
         <Divider color="white" />

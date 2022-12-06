@@ -174,6 +174,38 @@ export function calcLagrange(first,second){
     const polCompleto =  polinomio.slice(0,-3)
     polinomio = nerdamer(`${polCompleto}`).text(); 
     return polinomio;
+}
 
+export function calcGaussSeidel(primero,segundo,tercero,inicial,iteraciones){
+    let F1 = primero;
+    let F2 = segundo;
+    let F3 = tercero;
+    let X0 = inicial.split(",");
+    let Iteraciones = iteraciones;
+    let X = nerdamer(`solve(${F1}, x)`).text(); 
+    let Y = nerdamer(`solve(${F2}, y)`).text(); 
+    let Z = nerdamer(`solve(${F3}, z)`).text(); 
+    console.log(X,Y,Z);
+    let x=X0[0];
+    let y=X0[1];
+    let z=X0[2];
+    let sumX = [];
+    let sumY = [];
+    let sumZ = [];
+    for (let i = 0; i < Iteraciones; i++) {
+        console.log("iteraciones #",i);
+        x = eval(X);
+        y = eval(Y);
+        z = eval(Z);
+        sumX.push(x);
+        sumY.push(y);
+        sumZ.push(z);
+    }
+
+    return {
+        sumX,
+        sumY,
+        sumZ
+    }
 
 }

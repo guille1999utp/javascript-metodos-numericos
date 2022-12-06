@@ -3,6 +3,7 @@ import {Routes,Route,BrowserRouter} from "react-router-dom";
 import { Biseccion } from "../components/Biseccion";
 import { Diferenciacion } from "../components/Diferenciacion";
 import { Error } from "../components/Error";
+import { Gauss } from "../components/GaussSeidel";
 import Header  from "../components/header";
 import { Integracion } from "../components/Integracion";
 import { Netwon } from "../components/Netwon";
@@ -23,6 +24,7 @@ export default function RoutesPage() {
             <Route path="/puntofijo" element={<PuntoFijo />} />
             <Route path="/integracion" element={<Integracion />} />
             <Route path="/diferenciacion" element={<Diferenciacion />} />
+            <Route path="/gauss" element={<Gauss />} />
     </Routes>
     </BrowserRouter>
   );
