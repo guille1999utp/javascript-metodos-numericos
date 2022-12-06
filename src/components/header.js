@@ -1,4 +1,5 @@
 import "./header.scss";
+import "./home.scss";
 import React, { useState,useContext } from "react";
 import {
   AiFillFacebook,
@@ -60,6 +61,16 @@ const Header = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+        <ListItem
+          key={"home"}
+          disablePadding
+          onClick={() => redirect("/home")}
+          sx={{ ":hover": { opacity: "0.58" } }}
+        >
+          <ListItemButton>
+            <ListItemText primary={"Home"} sx={{ color: "white" }} />
+          </ListItemButton>
+        </ListItem>
         <ListItem
           key={"error"}
           disablePadding

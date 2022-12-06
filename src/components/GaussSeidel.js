@@ -23,6 +23,7 @@ export const Gauss = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     const result =  calcGaussSeidel(Form.primera,Form.segunda,Form.tercera,Form.iniciales,parseInt(Form.iteraciones));
+    console.log(result)
     setResult(result);
     setMostrar(true);
   };
@@ -75,9 +76,11 @@ export const Gauss = () => {
           style={{
             flexDirection: "column",
             marginTop: 20,
+            paddingBottom: "60px"
           }}
         >
-          <div
+          {result.sumX.map((_,i)=>{
+            return <div
             style={{
               flexDirection: "row",
             }}
@@ -89,42 +92,16 @@ export const Gauss = () => {
                 fontSize: 17,
               }}
             >
-              M1:
+              iteracion # {i+1}:
             </p>
-            <p>{result.M1}</p>
+            <p>x:{result.sumX[i]}</p>
+            <p>y:{result.sumY[i]},</p>
+            <p>z:{result.sumZ[i]}</p>
           </div>
-          <div
-            style={{
-              flexDirection: "row",
-            }}
-          >
-            <p
-              style={{
-                fontWeight: "bold",
-                marginRight: 10,
-                fontSize: 17,
-              }}
-            >
-              M2:
-            </p>
-            <p>{result.M2}</p>
-          </div>
-          <div
-            style={{
-              flexDirection: "row",
-            }}
-          >
-            <p
-              style={{
-                fontWeight: "bold",
-                marginRight: 10,
-                fontSize: 17,
-              }}
-            >
-              M3:
-            </p>
-            <p>{result.M3}</p>
-          </div>
+          }) 
+          }
+
+     
         </div>
       )}
     </div>

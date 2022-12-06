@@ -5,6 +5,7 @@ import { Diferenciacion } from "../components/Diferenciacion";
 import { Error } from "../components/Error";
 import { Gauss } from "../components/GaussSeidel";
 import Header  from "../components/header";
+import { Home } from "../components/Home";
 import { Integracion } from "../components/Integracion";
 import { Netwon } from "../components/Netwon";
 import { PolinomioLagrange } from "../components/PolinomioLagrange";
@@ -25,6 +26,7 @@ export default function RoutesPage() {
             <Route path="/integracion" element={<Integracion />} />
             <Route path="/diferenciacion" element={<Diferenciacion />} />
             <Route path="/gauss" element={<Gauss />} />
+            <Route path="/home" element={<Home />} />
     </Routes>
     </BrowserRouter>
   );
